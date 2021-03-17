@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_schedule">
+
+    <fragment
+        android:id="@+id/navigation_schedule"
+        android:name="com.maksat.participantapp.ui.schedule.ScheduleFragment"
+        android:label="@string/title_schedule"
+        tools:layout="@layout/fragment_schedule" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_dashboard"
+            app:destination="@id/navigation_b2b"></action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_b2b"
+        android:name="com.maksat.participantapp.ui.b2b.B2BFragment"
+        android:label="@string/title_b2b"
+        tools:layout="@layout/fragment_b2b" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_navigation_notifications"
+            app:destination="@id/navigation_voting" />
+        <action
+            android:id="@+id/action_navigation_b2b_to_navigation_schedule"
+            app:destination="@id/navigation_schedule" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_voting"
+        android:name="com.maksat.participantapp.ui.voting.VotingFragment"
+        android:label="@string/title_voting"
+        tools:layout="@layout/fragment_voting" >
+        <action
+            android:id="@+id/action_navigation_voting_to_mapFragment"
+            app:destination="@id/navigation_map" />
+        <action
+            android:id="@+id/action_navigation_voting_to_navigation_b2b"
+            app:destination="@id/navigation_b2b" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.maksat.participantapp.ui.map.MapFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_navigation_map_to_navigation_more"
+            app:destination="@id/navigation_more" />
+        <action
+            android:id="@+id/action_navigation_map_to_navigation_voting"
+            app:destination="@id/navigation_voting" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.maksat.participantapp.ui.more.MoreFragment"
+        android:label="@string/title_more"
+        tools:layout="@layout/fragment_more" >
+        <action
+            android:id="@+id/action_navigation_more_to_profileFragment"
+            app:destination="@id/profileFragment"></action>
+        <action
+            android:id="@+id/action_navigation_more_to_organisationFragment"
+            app:destination="@id/organisationFragment" />
+        <action
+            android:id="@+id/action_navigation_more_to_visaFragment"
+            app:destination="@id/visaFragment" />
+        <action
+            android:id="@+id/action_navigation_more_to_arrDepFragment"
+            app:destination="@id/arrDepFragment" />
+        <action
+            android:id="@+id/action_navigation_more_to_usefullInformationFragment"
+            app:destination="@id/usefullInformationFragment" />
+        <action
+            android:id="@+id/action_navigation_more_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_navigation_more_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_navigation_more_to_feedbackFragment"
+            app:destination="@id/feedbackFragment" />
+        <action
+            android:id="@+id/action_navigation_more_to_navigation_map"
+            app:destination="@id/navigation_map" />
+        <action
+            android:id="@+id/action_navigation_more_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.maksat.participantapp.ui.more.parts.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_navigation_more"
+            app:destination="@id/navigation_more" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.maksat.participantapp.ui.more.parts.exit.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_schedule"
+            app:destination="@id/navigation_schedule"
+            app:popUpTo="@+id/navigation_schedule"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true"/>
+        <action
+            android:id="@+id/action_loginFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.maksat.participantapp.ui.more.parts.exit.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/organisationFragment"
+        android:name="com.maksat.participantapp.ui.more.parts.orgranisation.OrganisationFragment"
+        android:label="fragment_organisation"
+        tools:layout="@layout/fragment_organisation" >
+        <action
+            android:id="@+id/action_organisationFragment_to_navigation_more"
+            app:destination="@id/navigation_more" />
+    </fragment>
+    <fragment
+        android:id="@+id/visaFragment"
+        android:name="com.maksat.participantapp.ui.more.parts.visa.VisaFragment"
+        android:label="fragment_visa"
+        tools:layout="@layout/fragment_visa" >
+        <action
+            android:id="@+id/action_visaFragment_to_navigation_more"
+            app:destination="@id/navigation_more" />
+    </fragment>
+    <fragment
+        android:id="@+id/arrDepFragment"
+        android:name="com.maksat.participantapp.ui.more.parts.arrdep.ArrDepFragment"
+        android:label="fragment_arr_dep"
+        tools:layout="@layout/fragment_arr_dep" >
+        <action
+            android:id="@+id/action_arrDepFragment_to_navigation_more"
+            app:destination="@id/navigation_more" />
+    </fragment>
+    <fragment
+        android:id="@+id/usefullInformationFragment"
+        android:name="com.maksat.participantapp.ui.more.parts.usefullinformation.UsefullInformationFragment"
+        android:label="fragment_usefull_information"
+        tools:layout="@layout/fragment_usefull_information" >
+        <action
+            android:id="@+id/action_usefullInformationFragment_to_navigation_more"
+            app:destination="@id/navigation_more" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.maksat.participantapp.ui.more.parts.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_navigation_more"
+            app:destination="@id/navigation_more" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.maksat.participantapp.ui.more.parts.about.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_navigation_more"
+            app:destination="@id/navigation_more" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedbackFragment"
+        android:name="com.maksat.participantapp.ui.more.parts.feedback.FeedbackFragment"
+        android:label="feedback_fragment"
+        tools:layout="@layout/fragment_feedback" >
+        <action
+            android:id="@+id/action_feedbackFragment_to_navigation_more"
+            app:destination="@id/navigation_more" />
+    </fragment>
+</navigation>
